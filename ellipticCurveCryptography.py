@@ -1,8 +1,3 @@
-'''This is a project that creates an elliptic curve and uses a value from it for an ElGamal elliptic curve encryption scheme.
-The x value and number encrypted are chosen by the user, while the other values are preset. I may change that in the future.
-I have not been able to decrypt the modulo. When I have, I will add it to this project.
-Work in progress. '''
-
 import math
 
 x = int(input('Put a number: '))
