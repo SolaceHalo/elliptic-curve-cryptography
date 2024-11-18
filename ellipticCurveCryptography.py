@@ -4,7 +4,6 @@ x = int(input('Put a number: '))
 xcb =  math.pow(x , 3) #x cubed
 a = 5
 b = 4
-p = 11 #prime modulo
 
 ysqr = int(xcb + (a * x) + b)
 y = math.sqrt(ysqr) #square root of ec to get y
@@ -16,14 +15,15 @@ print('The coordinates are %d and %d' % (x, y)) #prints out coordinates
 priv = 3 #private key
 public = (x * priv) #public key
 print('The public key is %d'% public) #published value
+print('The private key is %d' % priv) #published value, though not in practice
 
-k = 2 #int used to transmit message back to original user
+k = 5 #int used to transmit message back to original user
 m = int(input('Choose a number for a message: '))
 
 xEc = x * k #first encrypted value
 yEc = m + k * public #second encrypted value
 
-encryptMessage = (xEc % p, yEc % p) #adds mod to values
+encryptMessage = (xEc, yEc) #establishes encrypted message
 print(encryptMessage) #prints out encrypted message
 
 decryptFirst = xEc * priv #multiples encrypted x with private key
